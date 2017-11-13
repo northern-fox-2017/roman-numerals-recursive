@@ -1,6 +1,21 @@
 function to_roman(input) {
   // start your code here
-  return to_roman(input); 
+  let arrAngka = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+  let arrRomawi = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+
+
+  let roman = ""
+  for(var i = 0; i < arrAngka.length; i++){
+    if(input <= 0){
+      return roman
+    }
+    else if(input >= arrAngka[i]){
+      // console.log(arrRomawi[i])
+      roman += arrRomawi[i]
+      // console.log(roman)
+      return roman + to_roman(input - arrAngka[i])
+    }
+  }
 }
 
 console.log('My totally sweet testing script for new roman\n')
