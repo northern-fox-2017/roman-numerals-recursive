@@ -6,7 +6,7 @@ function to_roman(input) {
 
   if(input < 1){
     return hasil
-  } else{
+  } else {
     for(var i = 0; i < angka.length; i++){
       if(input >= angka[i]){
         // console.log(angka[i])
