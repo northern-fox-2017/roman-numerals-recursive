@@ -1,7 +1,7 @@
   function to_roman(input) {
     // start your code here
     let arrRoman = ['M','D','CD','C','XC','L','XL','X','IX','V','IV','I']
-  	let arrAngka = [1000,500,400,100,90,50,40,10,9,5,4,1]
+    let arrLatin = [1000,500,400,100,90,50,40,10,9,5,4,1]
     let hasil = '';
 
   	if(input <= 0){
@@ -9,11 +9,11 @@
   	}
 
   	for(var i = 0; i < arrRoman.length; i++) {
-  		if(input >= arrAngka[i]) {
+  		if(input >= arrLatin[i]) {
   			hasil += arrRoman[i];
-  			return hasil + to_roman(input-arrAngka[i]);
-  		}
-    }
+  			return hasil + to_roman(input-arrLatin[i]);
+  	  	}
+   	 }
   }
 
   console.log('My totally sweet testing script for new roman\n')
