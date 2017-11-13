@@ -4,10 +4,12 @@
     let arrLatin = [1000,500,400,100,90,50,40,10,9,5,4,1]
     let hasil = '';
 
+    // stopper untuk rekursif
   	if(input <= 0){
   	  return hasil;
   	}
 
+    //perulangan menggunakan for untuk menentukan roman length
   	for(var i = 0; i < arrRoman.length; i++) {
   		if(input >= arrLatin[i]) {
   			hasil += arrRoman[i];
