@@ -1,7 +1,20 @@
 function to_roman(input) {
-  // start your code here
-  return to_roman(input); 
+  //Buat komparasi yang unik dari roman dan arabic numerals
+    var arabic = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+    var roman = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I']
+    let result =''
+    debugger
+    for(i = 0; i < arabic.length; i++){
+      if(input==0){
+        return '';
+      }else if(input>=arabic[i]){
+        input-=arabic[i]
+        result += roman[i]
+        return result + to_roman(input);
+      }
+    }
 }
+
 
 console.log('My totally sweet testing script for new roman\n')
 console.log('input | expected | actual')
