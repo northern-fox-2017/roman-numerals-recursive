@@ -1,6 +1,32 @@
-function to_roman(input) {
+function to_roman(num) {
+   kosong = ''
+  angka = [1,4,5,9,10,40,50,90,100,400,500,900,1000];
+  roman = ['I','IV','V','IX','X','XL','L','XC','C','CD','D','CM','M']
+  
+ 
+    
+    if(num === 1){
+      return kosong+=roman[0];
+
+    }
+    else {
+       for (var i = angka.length; i >= 0; i--) {
+         while(num >= angka[i]){
+          kosong+=roman[i];
+         return kosong + to_roman(num-angka[i]);
+       }
+    }
+    
+      
+    
+
+    }
+    return kosong
+    //to_roman(num); 
+    
+  
   // start your code here
-  return to_roman(input); 
+  
 }
 
 console.log('My totally sweet testing script for new roman\n')
