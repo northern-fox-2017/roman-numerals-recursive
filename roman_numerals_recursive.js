@@ -2,10 +2,10 @@
     // start your code here
     let arrRoman = ['M','D','CD','C','XC','L','XL','X','IX','V','IV','I']
   	let arrAngka = [1000,500,400,100,90,50,40,10,9,5,4,1]
-  	let hasil = '';
+    let hasil = '';
 
   	if(input <= 0){
-  		return hasil;
+  	  return hasil;
   	}
 
   	for(var i = 0; i < arrRoman.length; i++) {
