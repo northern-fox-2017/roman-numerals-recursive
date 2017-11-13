@@ -1,6 +1,24 @@
-function to_roman(input) {
-  // start your code here
-  return to_roman(input); 
+const romanNumerals = {
+  'M': 1000, 'CM': 900,
+  'D': 500, 'CD': 400,
+  'C': 100, 'XC': 90,
+  'L': 50, 'XL': 40,
+  'X': 10, 'IX': 9,
+  'V': 5, 'IV': 4,
+  'I': 1
+};
+
+const to_roman = (num, result = '') => {
+  if (num < 1) {
+    return result;
+  } else {
+    for (const roman in romanNumerals) {
+      if (num >= romanNumerals[roman]) {
+        result += roman;
+        return to_roman(num -= romanNumerals[roman], result);  // tail call optimization
+      }
+    }
+  }
 }
 
 console.log('My totally sweet testing script for new roman\n')
