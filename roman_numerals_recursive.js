@@ -1,6 +1,19 @@
-function to_roman(input) {
-  // start your code here
-  return to_roman(input); 
+function to_roman(num) {
+  var roman = ["I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "M"];
+  var angka = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 1000];
+  var result = "";
+
+  if (num === 0) {
+    return result;
+  } else {
+    for (var i = angka.length - 1; i >= 0; i--) {
+      if (num >= angka[i]) {
+        result += roman[i];
+        num = num - angka[i];
+        return result + to_roman(num);
+      }
+    }
+  }
 }
 
 console.log('My totally sweet testing script for new roman\n')
