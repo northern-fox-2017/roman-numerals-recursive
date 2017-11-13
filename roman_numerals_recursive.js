@@ -1,6 +1,16 @@
-function to_roman(input) {
+function to_roman(num) {
   // start your code here
-  return to_roman(input); 
+  let numArabic = [1,4,5,9,10,40,50,90,100,400,500,900,1000].sort((a,b)=>b-a)
+  let numRomawi = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'].reverse()
+  if(num == 0){
+    return ''
+  }else{
+    for(let i = 0; i < numArabic.length; i++){
+      if(num >= numArabic[i]){
+        return numRomawi[i]+to_roman(num - numArabic[i])
+      }
+    }
+  }
 }
 
 console.log('My totally sweet testing script for new roman\n')
