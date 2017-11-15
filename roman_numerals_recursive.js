@@ -1,15 +1,34 @@
 function to_roman(input) {
   //Buat komparasi yang unik dari roman dan arabic numerals
-    var arabic = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
-    var roman = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I']
+
+    let Obj={
+      M:1000,
+      CM:900,
+      D:500,
+      CD:400,
+      C:100,
+      XC:90,
+      L:50,
+      XL:40,
+      X:10,
+      IX:9,
+      V:5,
+      IV:4,
+      I:1
+    }
+    // console.log(Obj);
+    // console.log(Object.keys(Obj)[1]);
+    let key = Object.keys(Obj)
     let result =''
-    debugger
-    for(i = 0; i < arabic.length; i++){
+    for(i in key){
+      let a = Object.keys(Obj)[i];
+      // console.log('ini a = '+a);
+      // console.log(Obj[a]);
       if(input==0){
         return '';
-      }else if(input>=arabic[i]){
-        input-=arabic[i]
-        result += roman[i]
+      }else if(input>=Obj[a]){
+        result += a
+        input-=Obj[a]
         return result + to_roman(input);
       }
     }
