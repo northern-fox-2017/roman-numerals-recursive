@@ -1,7 +1,39 @@
 function to_roman(input) {
-  // start your code here
-  return to_roman(input); 
+  //Buat komparasi yang unik dari roman dan arabic numerals
+
+    let Obj={
+      M:1000,
+      CM:900,
+      D:500,
+      CD:400,
+      C:100,
+      XC:90,
+      L:50,
+      XL:40,
+      X:10,
+      IX:9,
+      V:5,
+      IV:4,
+      I:1
+    }
+    // console.log(Obj);
+    // console.log(Object.keys(Obj)[1]);
+    let key = Object.keys(Obj)
+    let result =''
+    for(i in key){
+      let a = Object.keys(Obj)[i];
+      // console.log('ini a = '+a);
+      // console.log(Obj[a]);
+      if(input==0){
+        return '';
+      }else if(input>=Obj[a]){
+        result += a
+        input-=Obj[a]
+        return result + to_roman(input);
+      }
+    }
 }
+
 
 console.log('My totally sweet testing script for new roman\n')
 console.log('input | expected | actual')
